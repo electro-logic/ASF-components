@@ -13,7 +13,7 @@ sst25			serial flash memory	(tested with SST25VF080B memory)
 
 ad9834		dds
 
-nrf24l01+		2.4GHz RF Transceiver (in construction)
+nrf24l01+		2.4GHz RF Transceiver (alpha stage, tested with custom board with ATxmega128A4U)
 
 ## Notes:
 
