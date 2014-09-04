@@ -3,8 +3,6 @@
 #ifndef NRF24L01_REGS_H_
 #define NRF24L01_REGS_H_
 
-#define NRF24L01_ADDR_LEN	5
-
 // PTX = Primary TX
 // PRX = Primary RX
 
@@ -58,6 +56,7 @@
 #define NRF24L01_CRCO_BM		(1 << 2)
 #define NRF24L01_PWR_UP_BM		(1 << 1)
 #define NRF24L01_PRIM_RX_BM		1
+#define NRF24L01_CONFIG_REG_DEF	0x08
 
 // Status Register
 #define NRF24L01_RX_DR_BM		(1 << 6)
@@ -65,6 +64,7 @@
 #define NRF24L01_MAX_RT_BM		(1 << 4)
 #define NRF24L01_RX_P_NO_BM		(1 << 1)|(1 << 2)|(1 << 3)	// Default 111
 #define NRF24L01_STATUS_TX_FULL_BM		1
+#define NRF24L01_STATUS_REG_DEF	0x0E
 
 // RF Setup Register
 #define NRF24L01_CONT_WAVE_BM	(1 << 7)

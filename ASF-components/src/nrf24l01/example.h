@@ -19,18 +19,15 @@ void example_nrf24l01(void)
 	board_init();
 	sysclk_init();
 	
-	/*
 	// Enable USB
 	irq_initialize_vectors();	// Enables all interrupt levels
 	cpu_irq_enable();
 	stdio_usb_init();
-	*/
-	
+		
 	nrf24l01_init();
 	
 	// Start receiver
-	nrf24l01_primary_rx();
-	nrf24l01_flush_rx();
+	nrf24l01_primary_rx();	
 	
 	unsigned long nrfData = 0;
 	
@@ -44,7 +41,7 @@ void example_nrf24l01(void)
 		delay_ms(10);
 		while(!nrf24l01_dataReady()){
 			//printf("Waiting..\r\n");
-			delay_s(1);
+			delay_ms(1);
 			goto loop;
 		}
 		nrf24l01_receive_data((uint8_t*)&nrfData);

@@ -3,6 +3,8 @@
 #ifndef CONF_NRF24L01_H_
 #define CONF_NRF24L01_H_
 
+#include <asf.h>
+
 // Select a SPI clock speed (Maximum data rate 10MHz)
 #define CONF_NRF24L01_CLOCK_SPEED  8000000UL
 
@@ -16,9 +18,9 @@
 #define CONF_NRF24L01_SCK_PIN		IOPORT_CREATE_PIN(PORTC, 7)
 
 // NRF24L01 pins
-#define CONF_NRF24L01_CE_PIN		IOPORT_CREATE_PIN(PORTD, 3) // Chip Enable, activates RX (=1) or TX (=0) mode. Active high
-#define CONF_NRF24L01_CSn_PIN		IOPORT_CREATE_PIN(PORTD, 0) // SPI Chip Select
-#define CONF_NRF24L01_IRQ_PIN		IOPORT_CREATE_PIN(PORTD, 4)	// Maskable interrupt pin. Active low
+#define CONF_NRF24L01_CE_PIN		IOPORT_CREATE_PIN(PORTC, 4) // Chip Enable, activates RX (=1) or TX (=0) mode. Active high
+#define CONF_NRF24L01_CSn_PIN		IOPORT_CREATE_PIN(PORTC, 3) // SPI Chip Select
+#define CONF_NRF24L01_IRQ_PIN		IOPORT_CREATE_PIN(PORTC, 2)	// Maskable interrupt pin. Active low
 
 enum nrf24l01_data_rate
 {
@@ -38,7 +40,7 @@ enum nrf24l01_crc
 };
 
 // NRF24L01 crc mode
-#define CONF_NRF24L01_CRC			NRF24L01_CRC_1B
+#define CONF_NRF24L01_CRC			NRF24L01_CRC_2B
 
 enum nrf24l01_power_amplifier
 {
@@ -49,16 +51,24 @@ enum nrf24l01_power_amplifier
 };
 
 // NRF24L01 Power Amplifier
-#define CONF_NRF24L01_PA			NRF24L01_PA_less_18dBm
+#define CONF_NRF24L01_PA			NRF24L01_PA_0dBm
 
-// NRF24L01 RX/TX addresses (should be 5 byte long)
-#define CONF_NRF24L01_RX_ADDR		"clie1"
-#define CONF_NRF24L01_TX_ADDR		"serv1"
+enum nrf24l01_addrlen
+{
+	NRF24L01_ADDR_LEN_3,
+	NRF24L01_ADDR_LEN_4,
+	NRF24L01_ADDR_LEN_5
+};
 
+#define CONF_NRF24L01_ADDR_LEN		NRF24L01_ADDR_LEN_3
+#define CONF_NRF24L01_RX_ADDR		0xA6, 0xA7, 0xA6
+#define CONF_NRF24L01_TX_ADDR		0xEC, 0xED, 0xEC
+ 
 // NRF24L01 Payload lenght in bytes (0-32)
-#define CONF_NRF24L01_PAYLOAD		4
+#define CONF_NRF24L01_PAYLOAD		32
 
 // NRF24L01 RF channel
-#define CONF_NRF24L01_RF_CHANNEL	1
+// Allowed channels in Italy: 0-83
+#define CONF_NRF24L01_RF_CHANNEL	4
 
 #endif /* CONF_NRF24L01_H_ */
