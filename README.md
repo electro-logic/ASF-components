@@ -13,14 +13,16 @@ sst25			serial flash memory	(tested with SST25VF080B memory)
 
 ad9834		dds
 
-nrf24l01+		2.4GHz RF Transceiver (alpha stage, tested with custom board with ATxmega128A4U)
+nrf24l01+		2.4GHz RF Transceiver (tested with ATxmega128A4U custom board)
+
+ov7670		..coming soon..
 
 ## Notes:
 
-Components are written in "ASF style" and tested on XMega (ATxmega32A4U) mcu.
+Components are written in "ASF style" and tested when no specified on XMega (ATxmega32A4U) mcu.
 To reuse component copy component folder to project and configure config file.
 
-## Developed with:
+## Most pf the code was developed with:
 
 EWS ATXmega32A4U Breakout Board 
 
