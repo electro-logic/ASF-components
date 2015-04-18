@@ -22,7 +22,7 @@ ov7670		..coming soon..
 Components are written in "ASF style" and tested when no specified on XMega (ATxmega32A4U) mcu.
 To reuse component copy component folder to project and configure config file.
 
-## Most pf the code was developed with:
+## Most of the code was developed with:
 
 EWS ATXmega32A4U Breakout Board 
 
@@ -34,4 +34,5 @@ ASF 3.11.0 (included in Atmel Studio)
 
 
 Have fun
+
 Leonardo
