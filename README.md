@@ -1,4 +1,4 @@
-Tutorials and more at http://electro-logic.blogspot.it
+Tutorials and more at http://electro-logic.blogspot.com
 
 ASF-Components
 ============
@@ -14,8 +14,6 @@ sst25			serial flash memory	(tested with SST25VF080B memory)
 ad9834		dds
 
 nrf24l01+		2.4GHz RF Transceiver (tested with ATxmega128A4U custom board)
-
-ov7670		..coming soon..
 
 ## Notes:
 
